@@ -9,7 +9,7 @@ public class SavingsAccount_SS extends BankAccount_SS
 	 */
 	
 	//Same arguments for constructor as parent class
-	public SavingsAccount_SS(int accountNumber, double balance)
+	public SavingsAccount_SS(long accountNumber, double balance)
 	{
 		//Call superclass constructor (base arguments)
 		//initialized
@@ -42,7 +42,7 @@ public class SavingsAccount_SS extends BankAccount_SS
 		
 	}
 	@Override
-    //Withdraw method - decrease balance BUT cannot exceed balance (no OD)
+    //Withdraw method - decrease balance BUT cannot exceed balance 50(no OD)
     public void Withdraw(double amount)
     {
     	//validation on amount 
@@ -55,15 +55,15 @@ public class SavingsAccount_SS extends BankAccount_SS
 		
 		double newBalance = this.Balance - amount;
 		//HAS to have enough to cover the withdraw in the balance 
-		if (newBalance < 0)
+		if (newBalance < 50)
 		{
 			//Insufficient funds
-			System.out.printf("Balance: %f%nWithdraw Request: %f%n", this.Balance, newBalance);
+			System.out.printf("Balance: %.2f%nShort By: %.2f%n", this.Balance, newBalance);
 			throw new IllegalArgumentException("Insufficient Funds!");
 		}
 		//Assigned new balance
 		this.Balance = newBalance;
-		System.out.printf("New Balance: $f", newBalance); //let console know the new balance
+		System.out.printf("New Balance: %.2f", newBalance); //let console know the new balance
 	    
     }
 	
