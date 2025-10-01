@@ -52,4 +52,36 @@ public class BankAccount_SS {
     public int getAccountNumber() {
         return AccountNumber;
     }
+    
+    //Deposit Method - increase balance
+    public void Deposit(double amount)
+    {
+    	//validation on amount 
+    		//must be a double and more than 0 
+    	if (amount <= 0 || (((Object)amount) instanceof Double == false)) 
+    	{
+            throw new IllegalArgumentException("Amount must be a decimal and more than 0.");
+    	}
+    	//if it makes it here than assign new balance 
+    	double newBalance = this.Balance + amount;
+    	this.Balance = newBalance;
+    	System.out.printf("New Balance: $f", newBalance); //let console know the new balance
+    }
+    
+    //Withdraw method - decrease balance
+    public void Withdraw(double amount)
+    {
+    	//validation on amount 
+		//must be a double and more than 0 
+		if (amount <= 0 || (((Object)amount) instanceof Double == false)) 
+		{
+	        throw new IllegalArgumentException("Amount must be a decimal and more than 0.");
+		}
+		//if it makes it here than assign new balance 
+		double newBalance = this.Balance - amount;
+		this.Balance = newBalance;
+		System.out.printf("New Balance: $f", newBalance); //let console know the new balance
+	    
+    }
+    
 }

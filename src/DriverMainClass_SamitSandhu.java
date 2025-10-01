@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class DriverMainClass_SamitSandhu {
 	/*
@@ -18,6 +19,21 @@ public class DriverMainClass_SamitSandhu {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		//Declare + initalize scanner
+		Scanner sc = new Scanner(System.in);
+		
+		//Run 1
+			//get user account number
+		System.out.println("Enter account number (10 digits): ");
+		BankAccount_SS myAccount = new BankAccount_SS(sc.nextInt(), 1500.00); //initially $1500
+			//Display Initial 
+		System.out.printf("Initial Balance: %f%n", myAccount.getBalance());
+		
+			//Make Deposit of 1k
+		myAccount.
+		//
+		
+		
 		
 		
 
