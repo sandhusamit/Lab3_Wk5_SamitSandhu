@@ -20,13 +20,20 @@ public class BankAccount_SS {
         }
         
         // Validation rules
+        
+        //More than 0 balance at first - can be negative after (overdraft)
         if (balance < 0) {
             throw new IllegalArgumentException("Balance cannot be negative.");
         }
-        if (accountNumber <= 0) {
+        // Account number must be valid (no 0) 
+        // AccountNumber should be only 10 digits min and max 
+        //    - assign a local var for length 
+        int length = String.valueOf(accountNumber).length(); // length will be 5
+        
+        if (accountNumber <= 0 && length != 10) 
+        {
             throw new IllegalArgumentException("Account number must be positive.");
         }
-        
         AccountNumber = accountNumber;
         Balance = balance;
     }
